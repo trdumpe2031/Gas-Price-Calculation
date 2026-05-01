@@ -1,0 +1,36 @@
+def fuel_type():
+    valid_fuels = ["regular", "extra", "premium", "diesel"]
+    while True:
+        chosse = input(f"Enter fuel type ({', '.join(valid_fuels)}):")
+        if chosse in valid_fuels:
+            return chosse
+        print("Invalid input")
+
+def quantity_fuel():
+    while True:
+        try:
+            amount = float(input('Enter quantity of fuel in liters: '))
+            if amount > 0:
+                return amount
+            print("Invalid input")
+        except ValueError:
+            print("Invalid input")
+
+def pay_type():
+    method = ["cash", "gcash", "credit card"]
+    while True:
+        methods = input(f"Enter payment method ({', '.join(method)}): ").lower()
+        if methods in method:
+            return methods
+        print("Invalid input")
+
+print("---Fuel System Summary---")
+
+fuel = fuel_type()
+quantity = quantity_fuel()
+payment = pay_type()
+
+print("---ORDER SUMMARY---")
+print(f"Fuel Type:      {fuel.capitalize()}")
+print(f"Quantity:       {quantity}liters")
+print(f"Payment Method: {payment}")
