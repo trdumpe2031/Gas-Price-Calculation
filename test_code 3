@@ -1,0 +1,43 @@
+def gas_pay():
+   #Entering the type of fuel
+    gas_price = {
+        "Unleaded": 92.52,
+        "Diesel":51.85,
+        "Regular":56.65,
+        "Premium":80.00
+    }
+    print("---Available Gasoline---")
+    for fuel, price in gas_price.items():
+        print(f"{fuel}: {price:.2f}/gal")
+    fuel_type = input("Enter gasoline type: ").strip().capitalize()
+    if fuel_type not in gas_price:
+        print("Invalid Input")
+        return
+    #Entering the amount of gallons
+    try:
+        quantity = float(input(f"Enter gallons of {fuel_type}: "))
+        if quantity <= 0:
+            print("Invalid Input")
+            return
+    except ValueError:
+        print("Invalid Input")
+        return
+    #Entering Payment Method
+    payment_method = input("Enter payment method (Cash, E-Wallet, Credit Card): ")
+    price_per_unit = gas_price[fuel_type]
+    subtotal = quantity * price_per_unit
+    charge = subtotal * 0.03 if payment_method == "Credit" else 0.0
+    total_cost = subtotal + charge
+    #Order reciept
+    print("---Order Summary---")
+    print(f"Fuel Type:           {fuel_type}")
+    print(f"Quantity:            {quantity:.2f} liters")
+    print(f"Subtotal:           ₱{subtotal:.2f}")
+    if charge > 0:
+        print(f"Credit Fee:     ₱{charge:.2f}")
+    print(f"Payment:             {payment_method}")
+    print(f"Total:              ₱{total_cost:.2f}")
+    
+if __name__ == "__main__":
+    gas_pay()
+#Mahal nakaayo ang gasol
