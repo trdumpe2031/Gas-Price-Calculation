@@ -37,7 +37,7 @@ while True:
 
     gas_type, price = GetGasType(code)
 
-    if gas_type is None: 
+    if code < 1 or code > 3: 
         print("Invalid choice.")
         print("\n------------------------------\n")
         continue
@@ -48,6 +48,7 @@ while True:
     print("\nPayment Method: ")
     print("1 - Cash")
     print("2 - Card")
+    print("3 - GCash")
     method = int(input("Choose method: "))
 
     # Process
@@ -71,6 +72,11 @@ while True:
         
     elif method == 2:
         print("Payment method: Card")
+        print("Payment Approved")
+        print("Change: 0.0")
+
+    elif method == 3:
+        print("Payment method: GCash")
         print("Payment Approved")
         print("Change: 0.0")
 
