@@ -38,7 +38,8 @@ while True:
     gas_type, price = GetGasType(code)
 
     if gas_type is None: 
-        print("Invalid choice")
+        print("Invalid choice.")
+        print("\n------------------------------\n")
         continue
 
     quantity = float(input("Quantity of gas in liters: "))
