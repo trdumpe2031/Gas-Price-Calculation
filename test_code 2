@@ -1,0 +1,37 @@
+def fuel_price (fuel_type):
+    prices = {
+        "regular":1.45,
+        "premium": 1.70,
+        "diesel": 1.55
+    }
+    return(fuel_type.lower(), 0.0)
+def fuel_total(price_per_liter, quantity):
+    return price_per_liter * quantity
+def main():
+    print("---Fuel Price System---")
+    fuel_type = input("Enter fuel type (Regular, Premium, Diesel): ")
+    price_per_liter = fuel_price(fuel_type)
+
+    if price_per_liter == 0.0:
+        print("Invalid fuel type entered.")
+    return
+    try:
+        quantity = float(input("Enter quantity in liters: "))
+        if quantity <= 0:
+            print("Quantity must be greater han zero.")
+            return
+    except ValueError:
+        print("Invalid input. Please enter a numerical value for quantity.")
+        return
+    pay_method = input("Enter payment method (Cash, Card, Digital")
+    total_price = calculate_total(price_per_liter, quantity)
+
+    print("---Purchase Reciept---")
+    print(f"Fuel Type:  {fuel_type}")
+    print(f"Price per Liter:    {price_per_liter:.2f}")
+    print(f"Quantity:   {quantity} L")
+    print(f"Paymentt Method:    {pay_method}")
+    print(f"TOTAL PRICE:    {total_price:.2f}")
+
+if __name__ == "__main__":
+    main()
