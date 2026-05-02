@@ -69,9 +69,9 @@ while True:
         print("Change: ", change)
         
     elif method == 2:
-        print("Payment method: Cash")
-        print("Payment: ", payment)
-        print("Change: ", change)
+        print("Payment method: Card")
+        print("Payment Approved")
+        print("Change: 0.0")
 
     else : 
         print("Invalid payment method.")
